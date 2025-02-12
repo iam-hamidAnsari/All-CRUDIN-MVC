@@ -1,0 +1,40 @@
+﻿@model List<Emp>
+<a class="btn btn-primary" asp-action="AddEmp">Add Emp</a>
+<br />
+@if (TempData["ok"] != null)
+{
+    <div class="alert-success">
+        @TempData["ok"].ToString()
+    </div>
+}
+@if (TempData["error"] != null)
+{
+    <div class="alert-danger">
+        @TempData["error"].ToString()
+    </div>
+}
+@if (TempData["update"] != null)
+{
+    <div class="alert alert-warning">
+        @TempData["update"].ToString();
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Image</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody id="data">
+
+    </tbody>
+
+</table>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/ajax.js"></script>

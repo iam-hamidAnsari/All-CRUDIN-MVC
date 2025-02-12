@@ -1,0 +1,56 @@
+﻿@model List<Emp>
+<a class="btn btn-primary" asp-action="Addemp">Add Emp</a>
+<br />
+@if (TempData["ok"] != null)
+{
+    <div class="alert-success">
+        @TempData["ok"].ToString()
+    </div>
+}
+@if (TempData["error"] != null)
+{
+    <div class="alert-danger">
+        @TempData["error"].ToString()
+    </div>
+}
+@if (TempData["update"] != null)
+{
+    <div class="alert alert-warning">
+        @TempData["update"].ToString();
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Image</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in Model)
+        {
+            <tr>
+                <td>@e.id</td>
+                <td>@e.ename</td>
+                <td>@e.salary</td>
+                <td>
+                    <a class="btn btn-sm btn-success" href="@e.img">View</a>
+                    <a class="btn btn-sm btn-primary" href="@e.img" download="@e.img">Download</a>
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@e.id">Edit</a>
+                    <a class="btn btn-sm btn-danger" asp-action="delete" asp-route-id="@e.id">Delete</a>
+                </td>
+            </tr>
+        }
+        @if (Model == null)
+        {
+            <p>No Data found</p>
+        }
+    </tbody>
+
+</table>

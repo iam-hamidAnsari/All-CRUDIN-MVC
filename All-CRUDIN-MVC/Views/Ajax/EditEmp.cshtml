@@ -1,0 +1,25 @@
+﻿@model Emp
+<div class="form-control">
+    <form method="post" enctype="multipart/form-data" id="form">
+        <h2>Edit Emp</h2>
+
+        <input name="id" id="id" class="form-control" value="@Model.id" type="hidden" />
+
+        <div class="form-control">
+            <label>Name</label>
+            <input name="ename" id="ename" class="form-control" value="@Model.ename" type="text" />
+        </div>
+        <div class="form-control">
+            <label>Salary</label>
+            <input name="salary" id="salary" class="form-control" value="@Model.salary" type="text" />
+        </div>
+        <div class="form-control">
+            <label>Image</label>
+            <input name="img" class="form-control" type="file" />
+        </div>
+        <input type="submit" id="update" class="btn btn-warning" />
+    </form>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/ajax.js"></script>

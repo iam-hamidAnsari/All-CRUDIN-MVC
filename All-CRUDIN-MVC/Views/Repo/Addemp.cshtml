@@ -1,0 +1,20 @@
+﻿@model Emp
+
+<div class="form-control">
+    <form method="post" enctype="multipart/form-data">
+        <h2>Add Emp</h2>
+        <div class="form-control">
+            <label>Name</label>
+            <input asp-for="ename" class="form-control" type="text" />
+        </div>
+        <div class="form-control">
+            <label>Salary</label>
+            <input asp-for="salary" class="form-control" type="text" />
+        </div>
+        <div class="form-control">
+            <label>Image</label>
+            <input name="img" class="form-control" type="file" />
+        </div>
+        <input type="submit" class="btn btn-primary" />
+    </form>
+</div>
